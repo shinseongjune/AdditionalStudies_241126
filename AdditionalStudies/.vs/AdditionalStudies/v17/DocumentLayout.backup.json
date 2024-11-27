@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "D:\\Unity\\AdditionalStudies_241126\\AdditionalStudies\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CAFF075E-018F-48B7-AF3D-BE09CE1AD0F7}|AdditionalStudies\\AdditionalStudies.vcxproj|D:\\Unity\\AdditionalStudies_241126\\AdditionalStudies\\AdditionalStudies\\WeakPtr.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{CAFF075E-018F-48B7-AF3D-BE09CE1AD0F7}|AdditionalStudies\\AdditionalStudies.vcxproj|solutionrelative:AdditionalStudies\\WeakPtr.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CAFF075E-018F-48B7-AF3D-BE09CE1AD0F7}|AdditionalStudies\\AdditionalStudies.vcxproj|D:\\Unity\\AdditionalStudies_241126\\AdditionalStudies\\AdditionalStudies\\SharedPtr.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{CAFF075E-018F-48B7-AF3D-BE09CE1AD0F7}|AdditionalStudies\\AdditionalStudies.vcxproj|solutionrelative:AdditionalStudies\\SharedPtr.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -35,32 +31,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "WeakPtr.h",
-              "DocumentMoniker": "D:\\Unity\\AdditionalStudies_241126\\AdditionalStudies\\AdditionalStudies\\WeakPtr.h",
-              "RelativeDocumentMoniker": "AdditionalStudies\\WeakPtr.h",
-              "ToolTip": "D:\\Unity\\AdditionalStudies_241126\\AdditionalStudies\\AdditionalStudies\\WeakPtr.h",
-              "RelativeToolTip": "AdditionalStudies\\WeakPtr.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-27T08:45:37.626Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "SharedPtr.h",
               "DocumentMoniker": "D:\\Unity\\AdditionalStudies_241126\\AdditionalStudies\\AdditionalStudies\\SharedPtr.h",
               "RelativeDocumentMoniker": "AdditionalStudies\\SharedPtr.h",
               "ToolTip": "D:\\Unity\\AdditionalStudies_241126\\AdditionalStudies\\AdditionalStudies\\SharedPtr.h",
               "RelativeToolTip": "AdditionalStudies\\SharedPtr.h",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAAAYAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAC8AAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-11-26T08:15:19.585Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "UniquePtr.h",
               "DocumentMoniker": "D:\\Unity\\AdditionalStudies_241126\\AdditionalStudies\\AdditionalStudies\\UniquePtr.h",
               "RelativeDocumentMoniker": "AdditionalStudies\\UniquePtr.h",
@@ -68,7 +51,8 @@
               "RelativeToolTip": "AdditionalStudies\\UniquePtr.h",
               "ViewState": "AgIAAAUAAAAAAAAAAAAAABgAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-26T07:42:17.576Z"
+              "WhenOpened": "2024-11-26T07:42:17.576Z",
+              "EditorCaption": ""
             }
           ]
         }

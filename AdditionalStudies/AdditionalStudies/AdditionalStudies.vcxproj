@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClInclude Include="SharedPtr.h" />
     <ClInclude Include="UniquePtr.h" />
+    <ClInclude Include="WeakPtr.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
