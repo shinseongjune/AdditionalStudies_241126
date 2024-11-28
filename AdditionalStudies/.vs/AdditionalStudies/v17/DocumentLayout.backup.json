@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\Unity\\AdditionalStudies_241126\\AdditionalStudies\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CAFF075E-018F-48B7-AF3D-BE09CE1AD0F7}|AdditionalStudies\\AdditionalStudies.vcxproj|D:\\Unity\\AdditionalStudies_241126\\AdditionalStudies\\AdditionalStudies\\SharedPtr.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{CAFF075E-018F-48B7-AF3D-BE09CE1AD0F7}|AdditionalStudies\\AdditionalStudies.vcxproj|solutionrelative:AdditionalStudies\\SharedPtr.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{CAFF075E-018F-48B7-AF3D-BE09CE1AD0F7}|AdditionalStudies\\AdditionalStudies.vcxproj|D:\\Unity\\AdditionalStudies_241126\\AdditionalStudies\\AdditionalStudies\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CAFF075E-018F-48B7-AF3D-BE09CE1AD0F7}|AdditionalStudies\\AdditionalStudies.vcxproj|solutionrelative:AdditionalStudies\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CAFF075E-018F-48B7-AF3D-BE09CE1AD0F7}|AdditionalStudies\\AdditionalStudies.vcxproj|D:\\Unity\\AdditionalStudies_241126\\AdditionalStudies\\AdditionalStudies\\UniquePtr.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{CAFF075E-018F-48B7-AF3D-BE09CE1AD0F7}|AdditionalStudies\\AdditionalStudies.vcxproj|solutionrelative:AdditionalStudies\\UniquePtr.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{CAFF075E-018F-48B7-AF3D-BE09CE1AD0F7}|AdditionalStudies\\AdditionalStudies.vcxproj|D:\\Unity\\AdditionalStudies_241126\\AdditionalStudies\\AdditionalStudies\\Instantiator.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CAFF075E-018F-48B7-AF3D-BE09CE1AD0F7}|AdditionalStudies\\AdditionalStudies.vcxproj|solutionrelative:AdditionalStudies\\Instantiator.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,27 +31,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "SharedPtr.h",
-              "DocumentMoniker": "D:\\Unity\\AdditionalStudies_241126\\AdditionalStudies\\AdditionalStudies\\SharedPtr.h",
-              "RelativeDocumentMoniker": "AdditionalStudies\\SharedPtr.h",
-              "ToolTip": "D:\\Unity\\AdditionalStudies_241126\\AdditionalStudies\\AdditionalStudies\\SharedPtr.h",
-              "RelativeToolTip": "AdditionalStudies\\SharedPtr.h",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAC8AAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-26T08:15:19.585Z",
+              "Title": "main.cpp",
+              "DocumentMoniker": "D:\\Unity\\AdditionalStudies_241126\\AdditionalStudies\\AdditionalStudies\\main.cpp",
+              "RelativeDocumentMoniker": "AdditionalStudies\\main.cpp",
+              "ToolTip": "D:\\Unity\\AdditionalStudies_241126\\AdditionalStudies\\AdditionalStudies\\main.cpp",
+              "RelativeToolTip": "AdditionalStudies\\main.cpp",
+              "ViewState": "AgIAABAAAAAAAAAAAAAhwDYAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-28T08:39:30.145Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UniquePtr.h",
-              "DocumentMoniker": "D:\\Unity\\AdditionalStudies_241126\\AdditionalStudies\\AdditionalStudies\\UniquePtr.h",
-              "RelativeDocumentMoniker": "AdditionalStudies\\UniquePtr.h",
-              "ToolTip": "D:\\Unity\\AdditionalStudies_241126\\AdditionalStudies\\AdditionalStudies\\UniquePtr.h",
-              "RelativeToolTip": "AdditionalStudies\\UniquePtr.h",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAABgAAAAXAAAAAAAAAA==",
+              "Title": "Instantiator.h",
+              "DocumentMoniker": "D:\\Unity\\AdditionalStudies_241126\\AdditionalStudies\\AdditionalStudies\\Instantiator.h",
+              "RelativeDocumentMoniker": "AdditionalStudies\\Instantiator.h",
+              "ToolTip": "D:\\Unity\\AdditionalStudies_241126\\AdditionalStudies\\AdditionalStudies\\Instantiator.h",
+              "RelativeToolTip": "AdditionalStudies\\Instantiator.h",
+              "ViewState": "AgIAAFMAAAAAduYeEs4TwHQAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-26T07:42:17.576Z",
+              "WhenOpened": "2024-11-28T07:23:34.247Z",
               "EditorCaption": ""
             }
           ]

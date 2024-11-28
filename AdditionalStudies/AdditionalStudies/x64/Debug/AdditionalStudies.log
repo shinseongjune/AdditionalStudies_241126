@@ -1,0 +1,8 @@
+﻿  main.cpp
+D:\Unity\AdditionalStudies_241126\AdditionalStudies\AdditionalStudies\Instantiator.h(93,19): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+D:\Unity\AdditionalStudies_241126\AdditionalStudies\AdditionalStudies\Instantiator.h(124,19): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+  AdditionalStudies.vcxproj -> D:\Unity\AdditionalStudies_241126\AdditionalStudies\x64\Debug\AdditionalStudies.exe

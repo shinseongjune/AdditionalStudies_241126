@@ -13,16 +13,33 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\SmartPtr">
+      <UniqueIdentifier>{9df36ed8-01b1-4c05-8280-dd4c5dcb53b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GarbageCollector">
+      <UniqueIdentifier>{02c3fecb-048a-4314-854f-4688cc0f2f09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GarbageCollector">
+      <UniqueIdentifier>{9e8fa0c7-292e-460c-9ad7-ce3bb65d6cc8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="UniquePtr.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="SharedPtr.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\SmartPtr</Filter>
+    </ClInclude>
+    <ClInclude Include="UniquePtr.h">
+      <Filter>Header Files\SmartPtr</Filter>
     </ClInclude>
     <ClInclude Include="WeakPtr.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\SmartPtr</Filter>
     </ClInclude>
+    <ClInclude Include="Instantiator.h">
+      <Filter>Header Files\GarbageCollector</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files\GarbageCollector</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
