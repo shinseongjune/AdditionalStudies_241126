@@ -1,128 +1,128 @@
 #pragma once
 #include <vector>
-#include <map>
 #include <algorithm>
-
-// 객체 생성기
+#include <memory>
+#include <iostream>
 
 using namespace std;
 
-struct ObjectData {
-	void* ptr;
-	int gen;
+struct TestObject {
+    int value;
+    TestObject(int v) : value(v) {
+        cout << "TestObject 생성됨: " << value << endl;
+    }
+    ~TestObject() {
+        cout << "TestObject 소멸됨: " << value << endl;
+    }
+};
 
-	vector<void*> subscribers;
+// ObjectData를 템플릿으로 변경하여 타입 보존
+template <typename T>
+struct ObjectData {
+    unique_ptr<T> ptr;
+    int gen;
+    vector<void*> subscribers;
 };
 
 class Instantiator {
 private:
-	static Instantiator* _instance;
-	static const int capacity = 8;
+    static unique_ptr<Instantiator> _instance;
+    static const int capacity = 8;
 
-	vector<ObjectData> objs;
+    // ObjectData를 다형성 없이 처리
+    vector<unique_ptr<ObjectData<TestObject>>> objs;
 
-	Instantiator() = default;
-	Instantiator(const Instantiator&) = delete;
-	Instantiator& operator=(const Instantiator&) = delete;
+    Instantiator() = default;
+    Instantiator(const Instantiator&) = delete;
+    Instantiator& operator=(const Instantiator&) = delete;
 
 public:
-	~Instantiator() {
-		for (auto& objData: objs) {
-			if (objData.ptr) {
-				delete objData.ptr;
-			}
-		}
-		objs.clear();
-	}
+    ~Instantiator() {
+        cout << "Instantiator 소멸" << endl;
+    }
 
-	static Instantiator* GetInstance() {
-		if (_instance == nullptr) {
-			_instance = new Instantiator();
-		}
+    static Instantiator* GetInstance() {
+        if (_instance.get() == nullptr) {
+            cout << "Instantiator 인스턴스 초기화" << endl;
+            _instance.reset(new Instantiator());
+        }
+        else {
+            cout << "Instantiator 인스턴스 재사용" << endl;
+        }
+        return _instance.get();
+    }
 
-		return _instance;
-	}
+    template <typename T, typename... Args>
+    T* Make(Args&&... args) {
+        if (objs.size() >= capacity) {
+            CollectGarbage();
 
-	template <typename T, typename... Args>
-	T* Make(Args&&... args) {
-		if (objs.size() >= capacity) {
-			CollectGarbage();
+            if (objs.size() >= capacity) {
+                cout << "객체 생성 실패: 용량 초과" << endl;
+                return nullptr;
+            }
+        }
 
-			if (objs.size() >= capacity) {
-				cout << "객체 생성 실패: 용량 초과" << endl;
-				return nullptr;
-			}
-		}
+        auto newObject = make_unique<T>(forward<Args>(args)...);
 
-		T* newObject = new T(forward<Args>(args)...);
+        auto data = make_unique<ObjectData<T>>();
+        data->ptr = move(newObject);
+        data->gen = 1;
 
-		ObjectData data = {
-			newObject,
-			0,
-			vector<void*>()
-		};
+        objs.push_back(move(data));
+        return objs.back()->ptr.get();
+    }
 
-		objs.push_back(data);
-		return newObject;
-	}
+    void AddReference(void* obj, void* ref) {
+        auto it = find_if(objs.begin(), objs.end(),
+            [obj](const unique_ptr<ObjectData<TestObject>>& data) {
+                return data->ptr.get() == obj;
+            });
 
-	void AddReference(void* obj, void* ref) {
-		auto it = find_if(objs.begin(), objs.end(),
-			[obj](const ObjectData& data) {
-				return data.ptr == obj;
-			});
+        if (it != objs.end() && find((*it)->subscribers.begin(), (*it)->subscribers.end(), ref) == (*it)->subscribers.end()) {
+            (*it)->subscribers.push_back(ref);
+        }
+    }
 
-		if (it != objs.end() && find(it->subscribers.begin(), it->subscribers.end(), ref) == it->subscribers.end()) {
-			it->subscribers.push_back(ref);
-		}
-	}
+    void RemoveReference(void* obj, void* ref) {
+        auto it = find_if(objs.begin(), objs.end(),
+            [obj](const unique_ptr<ObjectData<TestObject>>& data) {
+                return data->ptr.get() == obj;
+            });
 
-	void RemoveReference(void* obj, void* ref) {
-		auto it = find_if(objs.begin(), objs.end(),
-			[obj](const ObjectData& data) {
-				return data.ptr == obj;
-			});
+        if (it != objs.end()) {
+            auto& subs = (*it)->subscribers;
+            subs.erase(remove(subs.begin(), subs.end(), ref), subs.end());
+        }
+    }
 
-		if (it != objs.end()) {
-			auto& subs = it->subscribers;
-			subs.erase(remove(subs.begin(), subs.end(), ref), subs.end());
-		}
-	}
+    void CollectGarbage() {
+        int initialSize = objs.size();
 
-	void CollectGarbage() {
-		int initialSize = objs.size();
+        for (int i = 1; i <= 4; ++i) {
+            objs.erase(remove_if(objs.begin(), objs.end(),
+                [i](unique_ptr<ObjectData<TestObject>>& objData) {
+                    return objData->gen == i && objData->subscribers.empty();
+                }),
+                objs.end());
 
-		for (int i = 0; i <= 4; ++i) {
-			objs.erase(remove_if(objs.begin(), objs.end(),
-				[i](ObjectData& objData) {
-					if (objData.gen == i && objData.subscribers.empty()) {
-						if (objData.ptr) {
-							delete objData.ptr;
-							objData.ptr = nullptr;
-						}
-						return true;
-					}
-					return false;
-				}),
-				objs.end());
-		}
+            if (objs.size() < capacity) break;
+        }
 
-		for (auto& objData : objs) {
-			if (objData.gen < 4) {
-				objData.gen++;
-			}
-		}
+        for (auto& obj : objs) {
+            if (obj->gen < 4) obj->gen++;
+        }
 
-		cout << "Collected " << (initialSize - objs.size()) << " objects." << endl;
-	}
+        cout << "Collected " << (initialSize - objs.size()) << " objects." << endl;
+    }
 
-	int GetCapacity() const {
-		return capacity;
-	}
+    int GetCapacity() const {
+        return capacity;
+    }
 
-	int GetSize() const {
-		return objs.size();
-	}
+    int GetSize() const {
+        return objs.size();
+    }
 };
 
-Instantiator* Instantiator::_instance = nullptr;
+unique_ptr<Instantiator> Instantiator::_instance = nullptr;
